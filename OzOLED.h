@@ -24,7 +24,7 @@
 #define OzOLED_Max_X					128	//128 Pixels
 #define OzOLED_Max_Y					64	//64  Pixels
 
-#define OLED_ADDRESS					0x3C
+//#define OLED_ADDRESS					0x3C
 #define I2C_400KHZ						1	// 0 to use default 100Khz, 1 for 400Khz
 
 // registers
@@ -69,7 +69,7 @@ class OzOLED {
 public:
 
 	byte addressingMode;
-
+	byte OLED_ADDRESS;
 	void sendCommand(byte command);
 	void sendData(byte Data);
 
@@ -81,7 +81,7 @@ public:
 	void drawBitmap(const byte *bitmaparray, byte X, byte Y, byte width, byte height);
 
 	void init();
-	
+
 	void setCursorXY(byte Column, byte Row);
 	void clearDisplay();
 	//void clearPage(byte page);

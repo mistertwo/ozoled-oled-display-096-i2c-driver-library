@@ -438,8 +438,12 @@ void OzOLED::drawBitmap(const byte *bitmaparray, byte X, byte Y, byte width, byt
 
 // =================== High Level ===========================
 
-
 void OzOLED::init(){
+
+    if (!OLED_ADDRESS) {
+        OLED_ADDRESS = 0x3C;
+    }
+
 	Wire.begin();
 	
 	// upgrade to 400KHz! (only use when your other i2c device support this speed)
